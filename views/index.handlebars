@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        {{!-- //insert burger image// --}}
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+
+            {{#each  burgers }}
+            {{#unless devoured }}
+            {{burger_name}}
+            <button data-id={{id}} class="devouredBtn">Devoured!</button><br>
+            {{/unless}}
+            {{/each}}
+        </div>
+        <div class="col-sm-6">
+
+            {{#each burgers }}
+            {{#if devoured}}
+            {{burger_name}}<br>
+            {{/if}}
+            {{/each}}
+
+        </div>
+    </div>
+
+    <form action="/api/burgers" method= "POST">
+      
+      <input type="text" id="burger_name" name= "burger_name">
+
+      <input type="hidden" name= "devoured" value= "0">
+    
+    <input type="submit">
+    </form>
+</div> 
