@@ -1,14 +1,17 @@
-<div class="container">
-    <div class="row">
-        {{!-- //insert burger image// --}}
+<div class="container bodyTag">
+    <div class="row p-3 mb-2">
+        <div class="col-md-4 offset-md-4">
+
+        <img src="/assets/img/burger.jpg" alt="eatDaBurger" class="burger">
+        </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
 
-            {{#each  burgers }}
+            {{#each burgers }}
             {{#unless devoured }}
             {{burger_name}}
-            <button data-id={{id}} class="devouredBtn">Devoured!</button><br>
+            <button data-id={{id}} class="devouredBtn btn btn-warning">Devoured!</button><br>
             {{/unless}}
             {{/each}}
         </div>
@@ -23,12 +26,12 @@
         </div>
     </div>
 
-    <form action="/api/burgers" method= "POST">
-      
-      <input type="text" id="burger_name" name= "burger_name">
+    <form action="/api/burgers" method="POST">
 
-      <input type="hidden" name= "devoured" value= "0">
-    
-    <input type="submit">
+        <input type="text" id="burger_name" name="burger_name">
+
+        <input type="hidden" name="devoured" value="0">
+
+        <input type="submit" class= "btn btn-primary">
     </form>
-</div> 
+</div>
